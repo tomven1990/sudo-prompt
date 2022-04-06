@@ -648,6 +648,7 @@ function WindowsWriteElevateScript(instance, end) {
 function WindowsWriteExecuteScript(instance, end) {
   var script = [];
   script.push('@echo off');
+  script.push('chcp 65001>nul');
   script.push(
     'call "' + instance.pathCommand + '"' +
     ' > "' + instance.pathStdout + '" 2> "' + instance.pathStderr + '"'
